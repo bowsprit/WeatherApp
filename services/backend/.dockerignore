@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.dockerignore
+Dockerfile
+.pytest_cache/
+tests/
