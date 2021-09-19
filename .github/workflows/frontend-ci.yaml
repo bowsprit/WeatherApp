@@ -27,4 +27,4 @@ jobs:
           npm run build --prefix services/frontend/
       - name: Run test
         run: |
-          npm run test --prefix services/frontend/ --if-present
+          npm run test --prefix services/frontend/ --passWithNoTests
