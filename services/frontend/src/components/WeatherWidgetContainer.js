@@ -24,7 +24,7 @@ const WeatherWidgetContainer = ({ weatherObjArray, widgetCount }) => {
 };
 
 WeatherWidgetContainer.propTypes = {
-    weatherObjArray = PropTypes.arrayOf(PropTypes.shape({
+    weatherObjArray: PropTypes.arrayOf(PropTypes.shape({
         temp: PropTypes.number,
         cond: PropTypes.string,
     })),
