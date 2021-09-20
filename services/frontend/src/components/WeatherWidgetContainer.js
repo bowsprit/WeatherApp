@@ -17,7 +17,7 @@ const WeatherWidgetContainer = ({ weatherObjArray, widgetCount }) => {
     }
 
     return (
-        <div className="flex flex-column md:flex-row justify-center my-5">
+        <div className="flex flex-column flex-wrap md:flex-row justify-center my-5">
             {createWeatherWidgets(weatherObjArray)}
         </div>
     )
