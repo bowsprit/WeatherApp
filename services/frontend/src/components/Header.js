@@ -9,8 +9,8 @@ const Header = ({ city, state }) => {
 }
 
 Header.propTypes = {
-    city = PropTypes.string.isRequired(),
-    state = PropTypes.string.isRequired(),
+    city: PropTypes.string.isRequired(),
+    state: PropTypes.string.isRequired(),
 }
 
 export default Header

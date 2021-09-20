@@ -32,7 +32,7 @@ WeatherWidgetContainer.propTypes = {
 };
 
 WeatherWidgetContainer.defaultProps = {
-    widgetCount = 5,
+    widgetCount: 5,
 };
 
 export default WeatherWidgetContainer;
