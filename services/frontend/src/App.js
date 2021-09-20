@@ -32,7 +32,7 @@ export const App = () => {
 
     return (
         <div className="flex">
-            <div className="md:w-1/2 mx-auto my-5 bg-blue-300 rounded-xl shadow-md text-gray-700 text-center text-xl p-4">
+            <div className="md:w-1/2 mx-auto my-5 rounded-xl shadow-md text-gray-700 text-center text-xl p-4 bg-gradient-to-b from-blue-300 to-blue-50">
                 <Header city={locationData.city} state={locationData.state} />
                 <WeatherWidgetContainer weatherObjArray={weatherData} />
             </div>

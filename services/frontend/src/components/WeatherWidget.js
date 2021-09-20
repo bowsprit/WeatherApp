@@ -58,7 +58,9 @@ const WeatherWidget = ({ temp,cond }) => {
             </div>
             <div className="text-2xl md:text-4xl">
                 <h1>
-                    <div>{temp}°</div>
+                    <div>
+                        {temp ? `${temp}°` : 'n/a'}
+                    </div>
                 </h1>
             </div>
         </div>
