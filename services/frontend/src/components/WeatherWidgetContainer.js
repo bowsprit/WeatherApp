@@ -28,7 +28,7 @@ WeatherWidgetContainer.propTypes = {
         temp: PropTypes.number,
         cond: PropTypes.string,
     })),
-    widgetCount = PropTypes.number,
+    widgetCount: PropTypes.number,
 };
 
 WeatherWidgetContainer.defaultProps = {
