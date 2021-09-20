@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import WeatherWidget from "./WeatherWidget";
 
-const WeatherWidgetContainer = ({ weatherObjArray, widgetCount = 5 }) => {
+const WeatherWidgetContainer = ({ weatherObjArray, widgetCount }) => {
     const createWeatherWidgets = (objArray) => {
         const widgetArray = []
         for (let index = 0; index < widgetCount; index++) {
@@ -20,6 +21,18 @@ const WeatherWidgetContainer = ({ weatherObjArray, widgetCount = 5 }) => {
             {createWeatherWidgets(weatherObjArray)}
         </div>
     )
+};
+
+WeatherWidgetContainer.propTypes = {
+    weatherObjArray = PropTypes.arrayOf(PropTypes.shape({
+        temp: PropTypes.number,
+        cond: PropTypes.string,
+    })),
+    widgetCount = PropTypes.number,
+};
+
+WeatherWidgetContainer.defaultProps = {
+    widgetCount = 5,
 };
 
 export default WeatherWidgetContainer;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
     faBolt,
@@ -65,6 +66,11 @@ const WeatherWidget = ({ temp,cond }) => {
             </div>
         </div>
     )
+};
+
+WeatherWidget.propTypes = {
+    temp: PropTypes.number,
+    cond: PropTypes.string,
 };
 
 export default WeatherWidget;
