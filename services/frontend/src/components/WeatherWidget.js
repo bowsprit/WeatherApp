@@ -56,7 +56,7 @@ const WeatherWidget = ({ temp,cond }) => {
                     <FontAwesomeIcon icon={getIconFromString(cond)} />
                 </h1>
             </div>
-            <div>
+            <div className="text-2xl md:text-4xl">
                 <h1>
                     <div>{temp}°</div>
                 </h1>

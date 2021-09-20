@@ -1,6 +1,6 @@
 const Header = ({ city, state }) => {
     return (
-        <div className="md:text-3xl pb-5">
+        <div className="md:text-4xl pb-5">
             <h1>{city}, {state}</h1>
         </div>
     )
