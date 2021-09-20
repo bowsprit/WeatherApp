@@ -9,23 +9,23 @@ export const App = () => {
 
     const weatherData = [
         {
-            temp: '51',
+            temp: 51,
             cond: 'cloudy',
         },
         {
-            temp: '48',
+            temp: 48,
             cond: 'rain',
         },
         {
-            temp: '58',
+            temp: 58,
             cond: 'windy',
         },
         {
-            temp: '62',
+            temp: 62,
             cond: 'partial-cloudy',
         },
         {
-            temp: '71',
+            temp: 71,
             cond: 'sunny',
         },
     ];
