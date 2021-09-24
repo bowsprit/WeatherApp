@@ -16,7 +16,10 @@ export const App = () => {
   ]);
 
   const updateMainCity = (newLocation) => {
-    if (newLocation !== mainCity) {
+    if (
+      newLocation.city !== mainCity.city &&
+      newLocation.state !== mainCity.state
+    ) {
       // Prepend prev. mainCity to top of suggested cities array
       setSuggestedCities([mainCity, ...suggestedCities]);
     }
