@@ -1,8 +1,10 @@
 import WeatherForecast from "./components/WeatherForecast";
+import SearchBar from "./components/SearchBar";
 
 export const App = () => {
   return (
-    <div>
+    <div className="flex flex-col">
+      <SearchBar />
       <WeatherForecast
         locationData={{ city: "San Francisco", state: "CA" }}
         defaultExpanded={true}
