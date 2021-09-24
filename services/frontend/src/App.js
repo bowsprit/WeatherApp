@@ -21,7 +21,7 @@ export const App = () => {
       newLocation.state !== mainCity.state
     ) {
       // Prepend prev. mainCity to top of suggested cities array
-      setSuggestedCities([mainCity, ...suggestedCities]);
+      setSuggestedCities([mainCity, ...suggestedCities.slice(1, 3)]);
     }
     // React is smart enough to determine if the new content differs from the old.
     // So we can do this outside the if statement.
@@ -32,7 +32,7 @@ export const App = () => {
     <div className="flex flex-col">
       <SearchBar handleUserSearch={updateMainCity} />
       <WeatherForecast locationData={mainCity} defaultExpanded={true} />
-      {suggestedCities.slice(0, 3).map((suggestedCity, index) => {
+      {suggestedCities.map((suggestedCity, index) => {
         return <WeatherForecast locationData={suggestedCity} key={index} />;
       })}
     </div>
