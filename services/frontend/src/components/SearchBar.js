@@ -15,9 +15,10 @@ const SearchBar = ({ handleUserSearch }) => {
       handleUserSearch(parsedLocation);
     } catch (e) {
       alert(
-        "Search input could not be pased. Please use `City, State` format."
+        "Search input could not be parsed. Please use `City, State` format."
       );
     }
+    // Reset input
     setUserInput("");
   };
 
