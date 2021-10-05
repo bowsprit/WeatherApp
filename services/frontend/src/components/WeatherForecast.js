@@ -4,25 +4,26 @@ import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 export const WeatherForecast = ({ locationData, defaultExpanded }) => {
-
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
   const [weatherData, setWeatherData] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/forecast/${locationData.city}, ${locationData.state}`)
-    .then(res => res.json())
-    .then(
-      (result) => {
-        // console.log(result);
-        setWeatherData(result);
-        setIsLoaded(true);
-      },
-      (error) => {
-        console.log(error);
-        // TODO: Add isError state handling
-      }
+    fetch(
+      `http://localhost:8000/forecast/${locationData.city}, ${locationData.state}`
     )
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          // console.log(result);
+          setWeatherData(result);
+          setIsLoaded(true);
+        },
+        (error) => {
+          console.log(error);
+          // TODO: Add isError state handling
+        }
+      );
   }, [locationData]);
 
   const toggleExpanded = () => {
@@ -37,7 +38,11 @@ export const WeatherForecast = ({ locationData, defaultExpanded }) => {
           onClick={toggleExpanded}
         >
           <Header city={locationData.city} state={locationData.state} />
-          {isLoaded ? <WeatherWidgetContainer weatherObjArray={weatherData} /> : <p>"Loading..."</p>}
+          {isLoaded ? (
+            <WeatherWidgetContainer weatherObjArray={weatherData} />
+          ) : (
+            <p>"Loading..."</p>
+          )}
         </div>
       ) : (
         <div

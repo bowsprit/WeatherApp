@@ -5,7 +5,9 @@ const WeatherWidgetContainer = ({ weatherObjArray }) => {
   const createWeatherWidgets = (objArray) => {
     const widgetArray = [];
     for (const [index, obj] of objArray.entries()) {
-      const widget = <WeatherWidget key={index} temp={obj.temp} condition={obj.condition} />;
+      const widget = (
+        <WeatherWidget key={index} temp={obj.temp} condition={obj.condition} />
+      );
       widgetArray.push(widget);
     }
     return widgetArray;
