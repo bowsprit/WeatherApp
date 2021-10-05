@@ -10,7 +10,7 @@ export const WeatherForecast = ({ locationData, defaultExpanded }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/forecast/foo`)
+    fetch(`http://localhost:8000/forecast/${locationData.city}, ${locationData.state}`)
     .then(res => res.json())
     .then(
       (result) => {
