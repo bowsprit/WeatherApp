@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .models import Condition, Forecast
-from typing import Dict, List, Optional
+from typing import List, Optional
 from datetime import datetime, timedelta
 import random
 
@@ -23,7 +23,7 @@ async def get_root():
     return {"data": "I am a WeatherApp"}
 
 
-@app.get("/forecast/{location}", response_model=Dict[str, List[Forecast]])
+@app.get("/forecast/{location}", response_model=List[Forecast])
 async def get_forecast_by_location(
     location: str, start_date: Optional[datetime] = None, days: int = 5
 ):
@@ -37,4 +37,4 @@ async def get_forecast_by_location(
         temp = round(random.uniform(23, 105), 1)
         forecast = Forecast(date=forecast_date, condition=condition, temp=temp)
         forecasts.append(forecast)
-    return {location: forecasts}
+    return forecasts
