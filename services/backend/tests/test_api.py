@@ -17,6 +17,5 @@ def test_forecast():
         response.status_code == 200
     ), f"Expected response 200, got {response.status_code}: {response.reason}."
     data = response.json()
-    assert test_location in data
     forecast = data[test_location]
     assert len(forecast) == days
