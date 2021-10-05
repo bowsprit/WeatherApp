@@ -12,7 +12,7 @@ import {
   faSlash,
 } from "@fortawesome/free-solid-svg-icons";
 
-const WeatherWidget = ({ temp, cond }) => {
+const WeatherWidget = ({ temp, condition }) => {
   const getIconFromString = (conditionString) => {
     let returnVal;
     switch (conditionString) {
@@ -53,7 +53,7 @@ const WeatherWidget = ({ temp, cond }) => {
     <div className="px-5 text-2xl md:text-6xl">
       <div>
         <h1>
-          <FontAwesomeIcon icon={getIconFromString(cond)} />
+          <FontAwesomeIcon icon={getIconFromString(condition)} />
         </h1>
       </div>
       <div className="text-2xl md:text-4xl">
@@ -67,7 +67,7 @@ const WeatherWidget = ({ temp, cond }) => {
 
 WeatherWidget.propTypes = {
   temp: PropTypes.number,
-  cond: PropTypes.string,
+  condition: PropTypes.string,
 };
 
 export default WeatherWidget;
