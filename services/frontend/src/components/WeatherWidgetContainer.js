@@ -1,17 +1,12 @@
 import PropTypes from "prop-types";
 import WeatherWidget from "./WeatherWidget";
 
-const WeatherWidgetContainer = ({ weatherObjArray, widgetCount }) => {
+const WeatherWidgetContainer = ({ weatherObjArray }) => {
   const createWeatherWidgets = (objArray) => {
     const widgetArray = [];
-    for (let index = 0; index < widgetCount; index++) {
-      let obj = objArray[index];
-      if (!obj) {
-        console.log(`Object ${index} was missing!`);
-        obj = { temp: null, cond: null };
-      }
+    for (const [index, obj] of objArray.entries()) {
       const widget = (
-        <WeatherWidget key={index} temp={obj.temp} cond={obj.cond} />
+        <WeatherWidget key={index} temp={obj.temp} condition={obj.condition} />
       );
       widgetArray.push(widget);
     }
@@ -29,10 +24,9 @@ WeatherWidgetContainer.propTypes = {
   weatherObjArray: PropTypes.arrayOf(
     PropTypes.shape({
       temp: PropTypes.number,
-      cond: PropTypes.string,
+      condition: PropTypes.string,
     })
   ),
-  widgetCount: PropTypes.number,
 };
 
 WeatherWidgetContainer.defaultProps = {
