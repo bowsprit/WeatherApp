@@ -20,6 +20,7 @@ __pycache__/
 
 ## Other Stuff
 .vscode/
+.env
 
 # misc
 .DS_Store
