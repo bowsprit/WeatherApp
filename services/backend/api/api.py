@@ -16,6 +16,7 @@ async def get_root():
 @app.get("/location/{location_query}", response_model=Location)
 def get_geocoded_location(location_query: str):
     try:
-        return geocoder.get_location_from_query(location_query)
+        location_list = geocoder.get_location_from_query(location_query)
+        return location_list[0]
     except geocoder.GeocoderError as e:
         raise HTTPException(status_code=500, detail=str(e))
