@@ -27,7 +27,7 @@ def parse_location_string(location_string: str) -> Location:
     ----------
     location_string: str
         A string formatted as specified above
-    
+
     Returns
     -------
     Location
@@ -38,14 +38,11 @@ def parse_location_string(location_string: str) -> Location:
         If entity can't be parsed
     """
     # This would arguable be simpler with regex but I don't care to bother with that right now.
-    if '+' in location_string:
-        split_string = location_string.split('+')
+    if "+" in location_string:
+        split_string = location_string.split("+")
         if len(split_string) == 2:
             lat, lon = split_string
-            return Location(
-                lat=float(lat),
-                lon=float(lon)
-            )
+            return Location(lat=float(lat), lon=float(lon))
 
     raise ValueError(f"Unable to parse {location_string}. Expected format 'lat+lon'")
 
@@ -63,7 +60,7 @@ def get_location_from_query(query_string: str, limit: int = 1) -> List[Location]
         A raw string, entered by a user, that the geocoder will attempt to locate.
     limit: int (default: 1)
         The max number of records to return.
-    
+
     Returns
     -------
     List[Location]
