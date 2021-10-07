@@ -8,6 +8,8 @@ services:
       - 8000:8000
     volumes: 
       - ./services/backend/api:/app/api
+    env_file:
+      - .env
   frontend:
     build: services/frontend
     ports:

@@ -31,5 +31,7 @@ jobs:
       run: |
         black services/backend/api services/backend/tests --check
     - name: Test with pytest
+      env:
+        GEOCODER_API_KEY: ${{ secrets.GEOCODER_API_KEY }}
       run: |
         pytest services/backend/tests
