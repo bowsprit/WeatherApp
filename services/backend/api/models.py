@@ -1,11 +1,12 @@
 from pydantic import BaseModel
+from typing import Optional
 import hashlib
 
 
 class Location(BaseModel):
     lat: float
     lon: float
-    query_string: str
+    query_string: Optional[str] = None
 
     @property
     def hashable_name(self) -> str:
